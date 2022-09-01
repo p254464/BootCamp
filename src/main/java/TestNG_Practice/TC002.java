@@ -1,36 +1,19 @@
-package week1.SaturnSprint1;
+package TestNG_Practice;
 
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-public class DeleteAccount {
-
-	public static void main(String[] args) throws InterruptedException {
-		
-		String actResult = "param1";
-		// Setup chrome driver and path
-		WebDriverManager.chromedriver().setup();
-		//remove notitifications
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-notifications");
-		// Launch chrome Browser
-		WebDriver driver= new ChromeDriver(options);
-		
-		//1. Launch login.salesforce.com site
-		driver.get("https://login.salesforce.com/");
-		//maximize the window
-		driver.manage().window().maximize();
+public class TC002 extends TestNG_hooks{
+	
+	@Test
+	private void test_TC002() throws InterruptedException {
 		//2) Click Login 3) Login with the credentials
 		driver.findElement(By.id("username")).sendKeys("hari.radhakrishnan@qeagle.com");
 		driver.findElement(By.id("password")).sendKeys("India$321");
@@ -69,8 +52,9 @@ public class DeleteAccount {
 		}else {
 			System.out.println("Account is not deleted successfully");
 		}
-	  	 driver.quit();
-	  	 
+
 	}
+	
+	
 
 }

@@ -74,7 +74,7 @@ public class EditOpportunity {
 			System.out.println("Edit opportunity is not verified");
 			
 		}
-	    Thread.sleep(3000);
+	   // Thread.sleep(3000);
 	    driver.close();
 	    	    		    	
 	}

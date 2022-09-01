@@ -1,4 +1,4 @@
-package week1.SaturnSprint1;
+package TestNG_Practice;
 
 import java.time.Duration;
 
@@ -10,23 +10,20 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.github.dockerjava.api.command.WaitContainerResultCallback;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CreateTask {
+  
 
-	private static Object duration;
 
-	public static void main(String[] args) throws InterruptedException {
-		String actResult = "Bootcamp";
-		WebDriverManager.edgedriver().setup();
-		EdgeOptions options = new EdgeOptions();
-		options.addArguments("--disable-notifications");
-		WebDriver driver = new EdgeDriver(options);
-		driver.manage().window().maximize();
-		driver.get("https://login.salesforce.com/");
+public class TC001 extends TestNG_hooks {
+		
+	
+	@Test
+	public void test_TC001() {
 		driver.findElement(By.id("username")).sendKeys("hari.radhakrishnan@qeagle.com");
 		driver.findElement(By.id("password")).sendKeys("India$321");
 		driver.findElement(By.id("Login")).click();
@@ -60,16 +57,8 @@ public class CreateTask {
 	    else {
 	    	System.out.println("Task is not created");
 				};
-				driver.close();
-	
-  	    	    
-	   
+		}
+
+
 	}
-}
-
-	
-
-	
-	
-
 
